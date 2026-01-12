@@ -1,0 +1,18 @@
+{
+    "name": "lenovo/task-management-system",
+    "description": "Task Management System MVC Project",
+    "require": {
+        "twig/twig": "^3.22"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\TaskManagementSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "elfitah",
+            "email": "elfitahchaimaa@gmail.com"
+        }
+    ]
+}
