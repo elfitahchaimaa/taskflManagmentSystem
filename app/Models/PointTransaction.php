@@ -23,7 +23,15 @@ class PointsTransaction{
         return $points;
     }
 
-    
+  //recuperer l historique de transaction from database
+  
+  public function getHistory($userId){
+    $sql="select * from transactions where user_id = ? ORDER BY created_at DESC";
+    $stmt=$this->pdo->prepare($sql);
+    $stmt->execute([$userId]);
+
+    return $stmt->fetchAll();
+}
 
 }
 
