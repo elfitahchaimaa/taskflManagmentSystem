@@ -22,6 +22,15 @@ class Reward {
         return $this->pdo->query($sql)->fetchAll();
     }
 
+    //supprimer une recompence
+
+        public function delete($id)
+    {
+        $sql = "DELETE FROM rewards WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+
+        return $stmt->execute([$id]);
+    }
     
 }
 ?>
