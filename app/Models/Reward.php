@@ -14,5 +14,14 @@ class Reward {
         $stmt=$this->pdo->prepare($sql);
         return $stmt->execute([$title,$points]);
     }
+
+    //lire toutes les recompenses
+
+    public function getAll(){
+        $sql="select * from rewards";
+        return $this->pdo->query($sql)->fetchAll();
+    }
+
+    
 }
 ?>
