@@ -40,6 +40,10 @@ class AuthController{
             ]);
         }
     }
+    public function logout(){
+        session_destroy();
+        header("Location:/login");
+    }
 
 }
 ?>
