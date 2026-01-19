@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}FacileAchat{% endblock %}</title>
+</head>
+<body>
+
+<nav>
+    {% if user %}
+        <a href="/dashboard">Dashboard</a>
+        <a href="/rewards">Récompenses</a>
+        <a href="/logout">Déconnexion</a>
+    {% else %}
+        <a href="/login">Connexion</a>
+        <a href="/register">Inscription</a>
+    {% endif %}
+</nav>
+
+<hr>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
