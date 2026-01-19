@@ -1,26 +1,18 @@
 <?php
 
-class RewardController{
-    private $twig;
+class RewardController {
     private $rewardModel;
+    private $twig;
 
-    public function __construct($twig,$pdo)
-    {
+    public function __construct($pdo, $twig) {
         $this->rewardModel = new Reward($pdo);
         $this->twig = $twig;
     }
 
-
-    public function index()
-    {
+    public function index() {
         $rewards = $this->rewardModel->getAll();
-
         echo $this->twig->render('rewards/index.twig', [
-            'user' => $_SESSION['user'],
             'rewards' => $rewards
         ]);
-
     }
 }
-
-?>
