@@ -16,8 +16,10 @@ class RewardController{
         $rewards = $this->rewardModel->getAll();
 
         echo $this->twig->render('rewards/index.twig', [
+            'user' => $_SESSION['user'],
             'rewards' => $rewards
         ]);
+
     }
 }
 

@@ -36,8 +36,10 @@ class AuthController{
             header("Location: /dashboard");
         } else {
             echo $this->twig->render('auth/login.twig', [
-                'error' => 'Email ou mot de passe incorrect'
+                'error' => $error ?? null,
+                'user' => $_SESSION['user'] ?? null
             ]);
+
         }
     }
     public function logout(){
