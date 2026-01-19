@@ -1,0 +1,24 @@
+{% extends "layout.twig" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Bonjour {{ user.name }}</h2>
+
+<h3>Ajouter un achat</h3>
+<form method="POST" action="/add-purchase">
+    <input type="number" name="amount" placeholder="Montant (€)" required>
+    <button type="submit">Valider</button>
+</form>
+
+<h3>Historique des transactions</h3>
+<ul>
+{% for transaction in history %}
+    <li>
+        {{ transaction.amount }} € → 
+        {{ transaction.points }} points
+    </li>
+{% else %}
+    <li>Aucune transaction</li>
+{% endfor %}
+</ul>
+{% endblock %}

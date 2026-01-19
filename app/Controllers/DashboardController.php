@@ -17,8 +17,10 @@ class DashboardController{
             $history = $this->pointsModel->getHistory($userId);
 
             echo $this->twig->render('dashboard/index.twig', [
+                'user' => $_SESSION['user'],
                 'history' => $history
             ]);
+
     }
 
     //ajouter achat

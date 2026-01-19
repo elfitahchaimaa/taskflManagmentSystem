@@ -1,0 +1,17 @@
+{% extends "layout.twig" %}
+{% block title %}Récompenses{% endblock %}
+
+{% block content %}
+<h2>Catalogue des récompenses</h2>
+
+<ul>
+{% for reward in rewards %}
+    <li>
+        {{ reward.title }} - 
+        {{ reward.points_required }} points
+    </li>
+{% else %}
+    <li>Aucune récompense disponible</li>
+{% endfor %}
+</ul>
+{% endblock %}
