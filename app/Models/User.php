@@ -26,7 +26,7 @@ class user{
         return false;
     }
 
-    public function findEmail($email){
+    public function findByEmail($email){
 
         $sql="select * from users where email = ?";
         $stmt = $this->pdo->prepare($sql);
